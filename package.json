@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frank-5850/burger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frank-5850/burger/issues"
+  },
+  "homepage": "https://github.com/Frank-5850/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
+  }
+}
