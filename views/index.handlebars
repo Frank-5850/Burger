@@ -1,14 +1,13 @@
-<div class="row col-md-12">
-    <div class="card my-4">
-    <h5 class="card-header text-center">Order your favorite burger!</h5>            
-        <div class="card-body">         
-            <div class="form-group m-0">
-                <label for="new_burger"></label>
-                <input class="form-control" rows="1" id="new_burger" name="burger_name"></input>
-                <button id="submit-button" type="submit" class="btn btn-success mx-auto mt-4"><i class="fas fa-utensils"></i>  Place an Order!</button> 
-            </div>
-        </div> 
-    </div>    
+<div class="row card col-md-12 my-4">
+    <h3 class="card-header text-center">Order your favorite burger!</h3>
+    <div class="row card-body">
+    <img class="col-md-2"src="/assets/images/Burger.png">
+    <div class="col-md-10 form-group" id="submitForm">
+        <label for="new_burger"></label>
+        <input class="form-control" rows="1" id="new_burger" name="burger_name"></input>
+        <button id="submit-button" type="submit" class="btn btn-success mx-auto"><i class="fas fa-utensils"></i>  Place an Order!</button> 
+    </div>
+    </div>
 </div>
 
 <div class="row col-md-12">
@@ -17,9 +16,11 @@
             Burgers Ready
         </h3>
             {{#each burgers}}
+            {{#unless this.devoured}}
             <h4 class="card mt-3 p-2 text-center">{{burger_name}}
-                <button class="btn btn-success mt-2 btn-sm eat-button" data-id="{{id}}" type="submit">EAT IT!</button>
+                <button id="eatButton" class="btn btn-success mt-2 btn-sm" data-id="{{id}}" type="submit">EAT IT!</button>
             </h4>
+            {{/unless}}
             {{/each}}
     </div>
     <div class="col-md-6">
@@ -27,9 +28,11 @@
             Burgers Eaten
         </h3>
             {{#each burgers}}
+            {{#if this.devoured}}
             <h4 class="card mt-3 p-2 text-center">{{burger_name}}
-                <button class="btn btn-success mt-2 btn-sm eat-button" data-id="{{id}}" type="submit">REORDER!</button>
+                <button id="unEatButton" class="btn btn-primary mt-2 btn-sm unEatButton" data-id="{{id}}" type="submit">REORDER!</button>
             </h4>
+            {{/if}}
             {{/each}}
     </div>
 </div>

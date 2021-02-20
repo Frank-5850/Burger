@@ -1,0 +1,16 @@
+body {
+  background-color: gray;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.btn {
+  margin: 10px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
