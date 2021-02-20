@@ -3,11 +3,11 @@ const router = express.Router();
 const burger = require("../Models/burger");
 
 router.get("/", (req, res) => {
-  res.send("This is a test");
+  // res.send("This is a test");
   burger.selectAll((data) => {
     const handleBarsObject = { burgers: data };
     console.log(handleBarsObject);
-    res.render(handleBarsObject);
+    res.render("index", handleBarsObject);
   });
 });
 

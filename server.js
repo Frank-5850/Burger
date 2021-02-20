@@ -4,6 +4,8 @@ const app = express();
 const exphbs = require("express-handlebars");
 const burger = require("./controllers/burgers_controller");
 
+app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
