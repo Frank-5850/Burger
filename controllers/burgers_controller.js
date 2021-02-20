@@ -6,26 +6,25 @@ router.get("/", (req, res) => {
   // res.send("This is a test");
   burger.selectAll((data) => {
     const handleBarsObject = { burgers: data };
-    console.log(handleBarsObject);
     res.render("index", handleBarsObject);
   });
 });
 
 router.post("/burger/create", (req, res) => {
   burger.insertOne(req.body.burger_name, () => {
-    console.log(res);
+    res.redirect("/");
   });
 });
 
-router.post("/burger/eat", (req, res) => {
-  burger.updateOne(req.body.id, () => {
-    console.log(res);
+router.post("/burger/eat/:id", (req, res) => {
+  burger.updateOne(req.params.id, () => {
+    res.redirect("/");
   });
 });
 
-router.post("/burger/uneat", (req, res) => {
-  burger.updateOne(req.body.id, () => {
-    console.log(res);
+router.post("/burger/uneat/:id", (req, res) => {
+  burger.returnOne(req.params.id, () => {
+    res.redirect("/");
   });
 });
 

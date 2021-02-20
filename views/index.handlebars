@@ -18,7 +18,7 @@
             {{#each burgers}}
             {{#unless this.devoured}}
             <h4 class="card mt-3 p-2 text-center">{{burger_name}}
-                <button id="eatButton" class="btn btn-success mt-2 btn-sm" data-id="{{id}}" type="submit">EAT IT!</button>
+                <button class="btn btn-success mt-2 btn-sm eatButton" data-id="{{id}}" type="submit">EAT IT!</button>
             </h4>
             {{/unless}}
             {{/each}}
@@ -30,7 +30,7 @@
             {{#each burgers}}
             {{#if this.devoured}}
             <h4 class="card mt-3 p-2 text-center">{{burger_name}}
-                <button id="unEatButton" class="btn btn-primary mt-2 btn-sm unEatButton" data-id="{{id}}" type="submit">REORDER!</button>
+                <button class="btn btn-primary mt-2 btn-sm unEatButton" data-id="{{id}}" type="submit">REORDER!</button>
             </h4>
             {{/if}}
             {{/each}}
